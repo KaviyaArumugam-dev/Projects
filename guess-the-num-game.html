@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <h1 id="guess">Guess the number from 1 to 10</h1>
+    <input id="guessnum">
+    <button onclick="check()">check</button>
+    <p id="result">You are Right or Wrong</p>
+    <p id="score">Score:10</p>
+</div>
+</body>
+<script>
+    var guessnum=document.getElementById("guessnum")
+    var result=document.getElementById("result")
+    var score=document.getElementById("score")
+    var randomnumber=Math.floor(Math.random()*10)+1
+    var final=10
+    function check()
+    {
+        var enternum=guessnum.value
+        if(randomnumber==enternum)
+        {
+            result.textContent="You are Right"
+        }
+        else{
+            final=final-1  //we must use the same name final cause everytime i get wrong the final value will keep change(like for loop) if i didn't use the same value means the final value remains the same it doesn't decrease at all
+            score.textContent="score:"+final
+            result.textContent="You are Wrong"
+           
+        }
+    }
+</script>
+</html>
+<style>
+   body{
+    background-color: #d6eaf8;
+    text-align: center;
+   }
+   
+   .container{
+    margin-top: 30vh;
+    text-align: center;
+    background-color: #f2f6fa;
+    border-color: #add8e6;
+    border-radius: 5px;
+    width: fit-content;
+    margin-left: 500px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+   }
+   h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #2c3e50;
+   }
+   #guessnum{
+    border:none;
+    background-color: rgb(215, 218, 218);
+    border-color: #5dade2;
+    color: darkblue;
+    width: 250px;
+    border-radius: 2px;
+    padding: 5px;
+   }
+   button{
+    background-color:#5dade2 ;
+    border: none;
+    padding: 4px;
+    border-radius: 3px;
+    color:#edf0f3;
+   }
+   button:hover{
+    background: color #48c9b0;;
+   }
+   p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   #result{
+    color: #28b463;
+   }
+   #score{
+    color: #e74c3c;
+   }
+</style>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="main">
+  <h1>TO-DO List</h1>
+  <input id="input">
+  <button id="ad" onclick="add()">Add</button>
+<ul id="list_select">
+</ul>
+</div>
+</body>
+<script>
+  var list_select=document.getElementById("list_select")
+  var input=document.getElementById("input")
+  var del=document.getElementById("del")
+
+  function add(){
+    var listitem=document.createElement("li")
+    listitem.innerHTML=input.value +"<button onclick='deleteitem(event)'>delete</button>"
+    list_select.append(listitem)
+  }
+  function deleteitem(event){
+             event.target.parentElement.remove()
+  }
+  
+</script>
+<style>
+    body {
+    background-color: mediumPurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 ;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Container Styling */
+.main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* Enhanced Box Shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}
+
+/* Heading Styling */
+.main h1 {
+    color: mediumPurple;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Input and Add Button Styling */
+#input {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#ad {
+    padding: 10px;
+    background-color: mediumPurple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    margin-left: 10px;
+}
+
+#ad:hover {
+    background-color: #9b59b6; /* A lighter purple for hover effect */
+}
+
+/* List and List Item Styling */
+#list_select {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#list_select li {
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Delete Button Styling */
+#list_select li button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+
+#list_select li button:hover {
+    background-color: darkred;
+}
+</style>
+</html>
