@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student form</title>
+</head>
+<body>
+<div class="form_container">
+    <form id="studentForm" onsubmit="addstudent(event)">
+    <table>
+        <h1>Student Form</h1>
+        <tr>
+         <td>Name</td>
+         <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="number" id="age"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gender" value="Male">Male
+              <input type="radio" name="gender" value="Female">Female
+            </td>
+        </tr>
+        <tr>
+            <td>Course</td>
+            <td>
+                <select id="course">
+                    <option value="Python">Python</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Sql">SQL</option>
+                    <option value="Html and css">HTML and CSS</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" id="email"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+               <button onclick="addstudent()">Add student</button>
+            </td>
+        </tr>
+        
+    </table>
+    </form>        
+</div>
+<table id="final">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Course</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="dataofstudent"></tbody>
+</table>
+    
+</body>
+</html>
+<script>
+function addstudent(){
+    event.preventDefault();
+    var name=document.getElementById("name").value;
+    var age=document.getElementById("age").value;
+    var gender=document.querySelector('input[name="gender"]:checked').value;// ? document.querySelector('input[name="gender"]:checked').value : ''; <--we can use this part if we want to make sure that the user select any gender ?(this symbol act like a if condition, before question mark part says that the gender is being selected and checked will check whether the user select one of the  option or not, if not the next part will execute and the output will be null)
+    var course=document.getElementById("course").value
+    var email=document.getElementById("email").value 
+    var data=document.getElementById("dataofstudent")     
+    var createrow=data.insertRow();                       
+     createrow.insertCell(0).innerHTML=name;
+     createrow.insertCell(1).innerHTML=age;
+     createrow.insertCell(2).innerHTML=gender;
+     createrow.insertCell(3).innerHTML=course;
+     createrow.insertCell(4).innerHTML=email;
+     createrow.insertCell(5).innerHTML='<button onclick="deleteStudent(event)">Delete</button>';
+     document.getElementById("studentForm").reset();
+
+    }
+    function deleteStudent(event){
+        var del=event.target.parentNode.parentNode;
+        del.remove();
+
+    }
+//intha edathula puthusa onnu learn paniruken ena na insert row special aa table ku create panna patthu //ipo create element use panalam ana first athuku tr create pani apro thevepadura ella td create pananum lots of process athuku than insertrow()*/
+</script>
+<style>
+    body{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-image: url(bg.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+        font-size: 18px;
+   }
+    .form_container {
+        margin-top: 40px;
+        background-color: rgba(0,0,0,0.4);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        width: 400px;
+        margin-bottom: 20px;
+    }
+    button{
+        background-color:#2f73b3;
+        color: aliceblue;
+        margin-top:20px;
+        padding: 7px;
+        border:none;
+        border-radius: 3px;
+        width: 100%;
+        font-weight: bold;
+    }
+    button:hover{
+       background-color:#235a8f;
+    }
+    input[type="text"],input[type="number"],input[type="email"]
+    {
+        background-color:#f0f0f0;
+        width:250px;
+        padding: 5px;
+        border:none;
+        border-radius: 3px;
+    }
+    td{
+        color: #f0f0f0;
+        font-weight: bold;
+    }
+    
+    table{
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td,th{
+        padding: 8px;
+        text-align: left;
+    }
+    select{
+        background-color: #f0f0f0;
+        padding: 5px;
+        width: 260px;
+        border: none;
+        border-radius: 3px;
+    }
+    #final {
+        background-color:rgba(0,0,0,0.4);
+        color: #f0f0f0;
+        margin-top: 30px;
+        border-radius: 4px;
+        padding-bottom: 10px;
+        width: 100%;
+        max-width: 800px;
+    }
+    tbody{
+      color: black;
+    }
+    h1{
+        text-align: center;
+        color:white;
+    }
+    #dataofstudent button{
+        background-color: crimson;
+    }
+</style>
