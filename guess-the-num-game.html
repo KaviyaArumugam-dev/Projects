@@ -37,52 +37,71 @@
 </script>
 </html>
 <style>
-   body{
-    background-color: #d6eaf8;
-    text-align: center;
-   }
-   
-   .container{
-    margin-top: 30vh;
-    text-align: center;
-    background-color: #f2f6fa;
-    border-color: #add8e6;
-    border-radius: 5px;
-    width: fit-content;
-    margin-left: 500px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-   }
-   h1{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #2c3e50;
-   }
-   #guessnum{
-    border:none;
-    background-color: rgb(215, 218, 218);
-    border-color: #5dade2;
-    color: darkblue;
-    width: 250px;
-    border-radius: 2px;
-    padding: 5px;
-   }
-   button{
-    background-color:#5dade2 ;
-    border: none;
-    padding: 4px;
-    border-radius: 3px;
-    color:#edf0f3;
-   }
-   button:hover{
-    background: color #48c9b0;;
-   }
-   p{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   }
-   #result{
-    color: #28b463;
-   }
-   #score{
-    color: #e74c3c;
-   }
+  body {
+            background: linear-gradient(to right, white); 
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            background-color: #6a1b9a; 
+            border-radius: 15px;
+            padding: 40px 60px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        #guessnum {
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 18px;
+            width: 350px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: white; 
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            color:#6a1b9a;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(225, 223, 223); 
+        }
+
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            color:chartreuse; 
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        #score {
+            font-size: 1.2em;
+            font-weight: bold;
+            color:rgb(232, 15, 59);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
 </style>
