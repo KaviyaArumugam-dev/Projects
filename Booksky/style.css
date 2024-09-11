@@ -1,0 +1,107 @@
+/*new things which i learned from this project*/
+/*position: absolute and fixed,z-index,opacity,background-color:transperant, input:: placeholder,:focus,outline:none*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    line-height: 30px;
+    
+}
+.navbar{
+    background-color: #fd6569;
+    padding: 10px;
+}
+.container{
+    padding: 28px;
+
+}
+.book-container{
+    background-color: black;
+    width: 20%;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    vertical-align: top;
+    display: inline-block;
+    margin-inline: 20px;
+}
+.book-container h2{
+    color: #fd6569;
+}
+.book-container button{
+    margin: none;
+    margin-top: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 4px;
+    background-color: #fd6569;
+}
+.btn{
+    background-color: #fd6569;
+    color: black;
+    border: none;
+    border-radius: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 40px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.overlay{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    opacity: 0.8;
+    z-index: 1;
+    display: none;
+}
+.book-popup{
+    background-color: #fd6569;
+    width:30%;
+    padding: 40px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    z-index: 2;
+    display: none;
+}
+.book-popup input{
+    font-size: 15px;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid black 2px;
+}
+.book-popup textarea{
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border: solid black 2px;
+}
+.book-popup input::placeholder,textarea::placeholder{
+    color: black;
+    font-size:  14px;
+}
+.book-popup input:focus,textarea:focus{
+    outline: none;
+}
+.book-popup button{
+    background-color: black;
+    color:white;
+    border: none;
+    padding: 8px;
+    border-radius: 3px;
+}
+
