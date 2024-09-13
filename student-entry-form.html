@@ -70,7 +70,7 @@ function addstudent(){
     event.preventDefault();
     var name=document.getElementById("name").value;
     var age=document.getElementById("age").value;
-    var gender=document.querySelector('input[name="gender"]:checked').value;// ? document.querySelector('input[name="gender"]:checked').value : ''; <--we can use this part if we want to make sure that the user select any gender ?(this symbol act like a if condition, before question mark part says that the gender is being selected and checked will check whether the user select one of the  option or not, if not the next part will execute and the output will be null)
+    var gender=document.querySelector('input[name="gender"]:checked').value;
     var course=document.getElementById("course").value
     var email=document.getElementById("email").value 
     var data=document.getElementById("dataofstudent")     
@@ -89,7 +89,7 @@ function addstudent(){
         del.remove();
 
     }
-//intha edathula puthusa onnu learn paniruken ena na insert row special aa table ku create panna patthu //ipo create element use panalam ana first athuku tr create pani apro thevepadura ella td create pananum lots of process athuku than insertrow()*/
+
 </script>
 <style>
     body{
