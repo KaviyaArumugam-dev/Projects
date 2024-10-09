@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img src="logo-Photoroom.png">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Accesories</a></li>
+                    <li><a href="#">cart</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="info">
+            <div class="overlay"></div>
+            <img src="mobile2-Photoroom.png" class="mobile">
+            <div id="circle">
+                <div class="feature one"><img src="camera-Photoroom.png">
+                <div>
+                    <h1>Camera</h1>
+                    <p>12MP , Wide Angle Lens</p>
+                </div>
+            </div>
+                <div class="feature two"><img src="speed-Photoroom.png">
+                    <div>
+                        <h1>Processor</h1>
+                        <p>Snapdragon octa-core 11nm</p>
+                    </div>
+                </div>
+                <div class="feature three"><img src="mobile-Photoroom.png">
+                    <div>
+                        <h1>Display</h1>
+                        <p>6.5" Mini-Drop Fullscreen</p>
+                    </div>
+                </div>
+                <div class="feature four"><img src="battery-Photoroom.png">
+                    <div>
+                        <h1>Battery Life</h1>
+                        <p>5000mAh, 720Hrs Standby</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <img src="up arrow-Photoroom.png" id="upbtn">
+            <h3>Features</h3>
+            <img src="up arrow-Photoroom.png" id="downbtn">
+        </div>
+        <script>
+            var circle=document.getElementById("circle")
+            var upbtn=document.getElementById("upbtn")
+            var downbtn=document.getElementById("downbtn")
+
+            var rotateValue = circle.style.transform;
+            var rotateSum;
+            upbtn.onclick =function()
+            {
+                rotateSum = rotateValue + "rotate(-90deg)"
+                circle.style.transform = rotateSum
+                rotateValue=rotateSum
+            }
+            downbtn.onclick =function()
+            {
+                rotateSum = rotateValue + "rotate(90deg)"
+                circle.style.transform = rotateSum
+                rotateValue=rotateSum
+            }
+        </script>
+    </div>
+</body>
+</html>
